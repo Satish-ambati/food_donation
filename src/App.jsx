@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom"
-import LandingPage from "./Home pages/landingpage"
+import LandingPage from "./Homepages/landingpage"
 import LiveChatUI from "./chatting/liveChat"
 import Trail from "./receipts/trail"
 import RewardsPage from "./rewards/reward"
