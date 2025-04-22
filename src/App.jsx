@@ -11,6 +11,7 @@ import DonationForm from "./Donation/donationform/Donation"
 import AuthPage from "./Authentication/authentication"
 import Forget from "./Authentication/forget"
 import DonationHistory from "./Donation/Donardashboard/history"
+import PartnerDirectory from "./partnerDirectory/partnerdirectory"
 function App() {
   return (
     <Routes>
@@ -26,6 +27,7 @@ function App() {
       <Route path="/donardashboard" element={<DonorDashboard/>}/>
       <Route path="/donateform" element={<DonationForm/>}/>
       <Route path="/donatehistory" element={<DonationHistory/>}/>
+      <Route path="/partnerdirectory" element={<PartnerDirectory/>}/>
     </Routes>
   )
 }
