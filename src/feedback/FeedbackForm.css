@@ -1,0 +1,118 @@
+.feedback-container {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #fdfdfd;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.feedback-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.feedback-form input,
+.feedback-form select,
+.feedback-form textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.feedback-form textarea {
+  resize: none;
+}
+
+.feedback-form button {
+  padding: 10px;
+  background-color: #007b5e;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.feedback-form button:hover {
+  background-color: #005f4e;
+}
+
+/* 🌟 Enhanced Star Rating Styling */
+.rating-stars {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.rating-stars .star {
+  font-size: 2rem;
+  cursor: pointer;
+  color: #ccc;
+  transition: color 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.rating-stars .star.filled {
+  color: #ffc107;
+  transform: scale(1.2);
+}
+
+.rating-stars .star:hover {
+  color: #ffa000;
+}
+
+.success-slide {
+  position: fixed;
+  top: 20px;
+  right: -100%;
+  background-color: #007b5e;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  z-index: 9999;
+  animation: slideIn 0.3s forwards;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+@keyframes slideIn {
+  to {
+    right: 20px;
+  }
+}
+
+.tick {
+  font-size: 20px;
+}
+
+.thankyou-box {
+  background-color: #e9fbe5; /* Very light green */
+  border: 1px solid #a5d6a7; /* Soft green border */
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  color: #2e7d32; /* Deep green text */
+  font-size: 1.15rem;
+  font-weight: 500;
+  margin-top: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.thankyou-box h2 {
+  color: #1b5e20; /* Strong green heading */
+  margin-bottom: 12px;
+  font-size: 1.4rem;
+}

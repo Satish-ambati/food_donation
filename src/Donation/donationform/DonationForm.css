@@ -1,0 +1,140 @@
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+    width: 100vw;
+    background: linear-gradient(to bottom right, #e3fdf5, #ffe6fa);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Main Inner Box */
+.dashboard-content {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    flex-wrap: wrap;
+}
+
+/* Left Image Section */
+.image-section {
+    flex: 1 1 50%;
+    /* background-image:url("food.jpg");
+    background-size:cover; */
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    height:100vh;
+    width:50vw;
+    padding: 40px;
+}
+.image-section img {
+    width: 100%;
+    height:100%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Right Form Section */
+.form-section {
+    flex: 1 1 50%;
+    background-color: #ffffff;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-section h1 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #007b5e;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-container {
+    background-color: #fefefe;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+}
+
+.donation-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.donation-form input,
+.donation-form select,
+.donation-form textarea {
+    margin-bottom: 15px;
+    padding: 12px 15px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #fff;
+}
+
+.donation-form input::placeholder,
+.donation-form textarea::placeholder {
+    color: #999;
+    font-style: italic;
+}
+
+.donation-form input:focus,
+.donation-form select:focus,
+.donation-form textarea:focus {
+    border-color: #007b5e;
+    outline: none;
+    box-shadow: 0 0 4px rgba(0, 123, 94, 0.3);
+}
+
+.donation-form textarea {
+    resize: vertical;
+    min-height: 60px;
+}
+
+.donation-form button {
+    background-color: #007b5e;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.donation-form button:hover {
+    background-color: #005f4f;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 123, 94, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .dashboard-content {
+        flex-direction: column;
+    }
+
+    .image-section,
+    .form-section {
+        flex: 1 1 100%;
+        padding: 20px;
+    }
+
+    .image-section img {
+        width: 100%;
+        height: auto;
+    }
+}
