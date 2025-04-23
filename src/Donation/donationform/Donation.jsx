@@ -11,6 +11,7 @@ const DonationForm = () => {
     foodType: '',
     quantity: '',
     description: '',
+    expiresAt: '',
   });
 
   const [donations, setDonations] = useState([]); // ✅ Local array to store donations
@@ -39,7 +40,7 @@ const DonationForm = () => {
     setDonations((prevDonations) => [...prevDonations, newDonation]); // ✅ Store in local object
 
     alert('Thank you! Your donation has been submitted.');
-    navigate('/dashboard');
+    navigate('/donatehistory');
 
     setFoodDetails({
       userType: '',
@@ -48,6 +49,7 @@ const DonationForm = () => {
       foodType: '',
       quantity: '',
       description: '',
+      expiresAt: '',
     });
   };
 
@@ -108,13 +110,22 @@ const DonationForm = () => {
               required
             />
 
-            <textarea
-              name="description"
-              placeholder="Description"
-              value={foodDetails.description}
+           
+          <select
+              name="expiresAt"
+              value={foodDetails.expiresAt}
               onChange={handleChange}
               required
-            />
+            >
+              <option value="">How many hours food will be in good condition(HOURS) </option>
+              <option value="1">0-1 </option>
+              <option value="2">1-2 </option>
+              <option value="3">2-3 </option>
+              <option value="4">3-4 </option>
+              <option value="5">4-5 </option>
+              <option value="6">5-6 </option>
+
+            </select>
 
             <button type="submit">Submit Donation</button>
           </form>

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 const LiveChatUI = () => {
+  const navigate = useNavigate();
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
   const [sessionStarted, setSessionStarted] = useState(false);
@@ -14,7 +16,9 @@ const LiveChatUI = () => {
     }
   };
   const handleEndSession = () => {
-    setSessionEnded(true);
+    alert("Thank you for your support! The chat has ended.");
+    
+    navigate("/donatehistory")
   };
   return (
     <div className="max-w-lg mx-auto p-6 bg-gray-50 rounded-lg shadow-lg">
@@ -60,11 +64,6 @@ const LiveChatUI = () => {
           >
             End Chat (Food Delivered)
           </button>
-        </div>
-      )}
-      {sessionEnded && (
-        <div className="text-center text-lg text-gray-700">
-          <p>Thank you for your support! The chat has ended.</p>
         </div>
       )}
     </div>

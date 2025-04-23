@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { PackageCheck, Users, Home, ClipboardList, Settings, Menu } from "lucide-react";
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
+import { useNavigate } from "react-router-dom";
 
 function Sidebar({ isOpen, toggleSidebar, activePage, setActivePage }) {
   const navItem = (label, Icon, page) => (
@@ -160,6 +161,7 @@ function DonationMap() {
 }
 
 function SettingsPanel() {
+    const navigate = useNavigate();
   const [profile, setProfile] = useState({ name: "", email: "" });
   const [passwords, setPasswords] = useState({ current: "", newPass: "" });
   const [settings, setSettings] = useState({
@@ -220,7 +222,7 @@ function SettingsPanel() {
           <h4 className="font-semibold mb-2">Help & Support</h4>
           <p className="text-sm text-gray-600">For help, contact support@example.com or check our FAQ section (coming soon).</p>
         </div>
-        <button className="mt-4 bg-red-600 text-white px-6 py-2 rounded hover:bg-red-700">Logout</button>
+        <button className="mt-4 bg-red-600 text-white px-6 py-2 rounded hover:bg-red-700" onClick={()=>{navigate("/")}}>Logout</button>
       </div>
       {message && <p className="mt-4 text-green-600 font-medium">{message}</p>}
     </div>

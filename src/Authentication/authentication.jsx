@@ -2,6 +2,8 @@ import { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { useNavigate } from "react-router-dom";
 export default function AuthPage() {
+  const [email,setEmail] = useState("");
+  const [password,setPassword]=useState("");
   const navigate = useNavigate();
   const [isLogin, setIsLogin] = useState(true);
   const [showRoleOptions, setShowRoleOptions] = useState(false);
@@ -41,6 +43,15 @@ export default function AuthPage() {
     console.log("Google Sign In clicked");
     // Link to Firebase or OAuth later
   };
+  const handleSignIn=()=>{
+    if(email=="satish.ambati0804@gmail.com"){
+      navigate("/admin")
+    }else if(email=="satish.ambati2005@gmail.com"){
+      navigate("/ngopanel");
+    }else{
+      navigate("/donorhome")
+    }
+  }
   return (
     <div className="min-h-screen flex items-center justify-center bg-green-50 px-4">
       <div className="bg-white rounded-2xl shadow-lg max-w-md w-full p-8">
@@ -87,25 +98,25 @@ export default function AuthPage() {
             />
           )}
 
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            value={formData.email}
-            onChange={handleInputChange}
-            required
-            className="w-full p-3 border border-gray-300 rounded focus:outline-[#006400]"
-          />
+<input
+      type="email"
+      name="email"
+      placeholder="Email"
+      value={email}
+      onChange={(e) => setEmail(e.target.value)}
+      required
+      className="w-full p-3 border border-gray-300 rounded focus:outline-[#006400]"
+    />
 
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            value={formData.password}
-            onChange={handleInputChange}
-            required
-            className="w-full p-3 border border-gray-300 rounded focus:outline-[#006400]"
-          />
+<input
+  type="password"
+  name="password"
+  placeholder="Password"
+  value={formData.password}
+  onChange={handleInputChange}
+  required
+  className="w-full p-3 border border-gray-300 rounded focus:outline-[#006400]"
+/>
 
           {/* Role Select */}
           {!isLogin && (
@@ -150,6 +161,9 @@ export default function AuthPage() {
             type="submit"
             className="w-full text-white font-medium py-2 rounded mt-2 transition"
             style={{ backgroundColor: "#006400" }}
+            onClick={handleSignIn}
+            // ()=>navigate("/admin")
+            
           >
             {isLogin ? "Login" : "Sign Up"}
           </button>

@@ -8,7 +8,7 @@ import p4 from '../assets/landing/p4.png';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-function LandingPage() {
+function DonorPage() {
   const navigate = useNavigate();
   const images = [sp1, sp2, sp3];
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -22,18 +22,19 @@ function LandingPage() {
 
   return (
     <div className="landing-container">
-      <header className="header">
-        <div className="nav-container">
-          <h1 className="logo text-white">FoodShare</h1>
-          <nav className="nav-links">
-            <a onClick={()=>navigate("/about")}>About</a>
-            <a href="#impact">Impact</a>
-            <a href="#contact">Contact</a>
-            <a onClick={()=>navigate("/awareness")}>Awareness</a>
-            <a onClick={()=>navigate("/authentication")}>Login / Sign up</a>
-          </nav>
-        </div>
-      </header>
+      <header className="header bg-green-700 p-4 shadow-md">
+  <div className="nav-container flex justify-between items-center">
+    <h1 className="logo text-white text-2xl font-bold">FoodShare</h1>
+    <nav className="nav-links">
+      <button
+        onClick={() => navigate("/donatehistory")}
+        className="bg-white text-green-700 font-semibold py-2 px-4 rounded-md shadow hover:bg-gray-100 transition duration-300"
+      >
+        Dashboard
+      </button>
+    </nav>
+  </div>
+</header>
 
       <section className="hero-section">
         <div className="hero-content">
@@ -95,4 +96,4 @@ function LandingPage() {
   );
 }
 
-export default LandingPage;
+export default DonorPage;

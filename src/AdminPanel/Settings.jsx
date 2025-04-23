@@ -1,13 +1,18 @@
 import { useState } from "react";
 import { FaSignOutAlt } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const Settings = () => {
+    const navigate = useNavigate()
   const [darkMode, setDarkMode] = useState(false);
   const [profile, setProfile] = useState({
     name: "Admin User",
     email: "admin@example.com",
   });
-
+  const handleSignout=()=>{
+    alert("logged out!");
+    navigate("/")
+  }
   return (
     <div className="space-y-8 p-6">
       {/* Account Settings */}
@@ -81,7 +86,7 @@ const Settings = () => {
         <div className="mt-4 text-right">
           <button
             className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 flex items-center gap-2"
-            onClick={() => alert("Logged out!")}
+            onClick={handleSignout}
           >
             <FaSignOutAlt /> Logout
           </button>

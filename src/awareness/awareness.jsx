@@ -1,7 +1,9 @@
 import React from 'react';
 import './AwarenessBlog.css'; // Assuming you have a CSS file for styling
+import { useNavigate } from 'react-router-dom';
 
 const AwarenessBlog = () => {
+  const navigate = useNavigate();
   return (
     <div className="blog-container">
       <header className="blog-header">
@@ -51,7 +53,7 @@ const AwarenessBlog = () => {
           </p>
 
           <div className="call-to-action">
-            <button className="donate-now-btn">Donate Now</button>
+            <button className="donate-now-btn" onClick={()=>navigate("/authentication")}>Donate Now</button>
           </div>
         </article>
       </section>

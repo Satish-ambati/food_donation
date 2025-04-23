@@ -1,11 +1,17 @@
 import React from 'react';
-const Receipt = ({ userType, name, foodType, quantity, date }) => {
+import { useLocation } from 'react-router-dom';
+
+const Receipts = () => {
+  const location = useLocation();
+  const { userType, name, foodType, quantity, date } = location.state;
+
   const receiptNumber = Math.floor(100000 + Math.random() * 900000);
+
   return (
     <div className="flex flex-col items-center p-4 bg-gray-50 min-h-screen">
       <div
         className="bg-white p-8 rounded-lg shadow-xl w-full max-w-lg border-2 border-green-200"
-        style={{ 
+        style={{
           fontFamily: "'Courier New', monospace",
           backgroundColor: '#ffffff',
           minHeight: '500px',
@@ -36,7 +42,7 @@ const Receipt = ({ userType, name, foodType, quantity, date }) => {
           </div>
           <div className="flex justify-between border-b border-dashed pb-3 text-base">
             <span className="font-semibold">Quantity:</span>
-            <span className="text-gray-700">{quantity} {quantity > 1 ? 'items' : 'item'}</span>
+            <span className="text-gray-700">{quantity}</span>
           </div>
           <div className="flex justify-between border-b border-dashed pb-3 text-base">
             <span className="font-semibold">Date:</span>
@@ -57,4 +63,5 @@ const Receipt = ({ userType, name, foodType, quantity, date }) => {
     </div>
   );
 };
-export default Receipt;
+
+export default Receipts;

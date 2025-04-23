@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import './FeedbackForm.css';
+import { useNavigate } from 'react-router-dom';
 
 const FeedbackForm = () => {
+  const navigate = useNavigate();
   const [feedback, setFeedback] = useState({
     role: '',
     name: '',
@@ -95,7 +97,7 @@ const FeedbackForm = () => {
               onChange={handleChange}
               rows="4"
             />
-            <button type="submit">Submit Feedback</button>
+            <button type="submit" onClick={()=>navigate("/donatehistory")}>Submit Feedback</button>
           </form>
         </>
       ) : (
