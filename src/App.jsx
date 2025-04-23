@@ -12,12 +12,14 @@ import AuthPage from "./Authentication/authentication"
 import Forget from "./Authentication/forget"
 import DonationHistory from "./Donation/Donardashboard/history"
 import PartnerDirectory from "./partnerDirectory/partnerdirectory"
+import AdminPanel from "./AdminPanel/admin"
 function App() {
   return (
     <Routes>
       <Route path="/" element={<LandingPage/>}/>
       <Route path="/authentication" element={<AuthPage/>}/>
       <Route path="/forget" element={<Forget/>}/> 
+      <Route path="/admin" element={<AdminPanel/>}/> 
       <Route path="/chat" element={<LiveChatUI/>}/>
       <Route path="/receipt" element={<Trail/>}/>
       <Route path="/reward" element={<RewardsPage/>}/>
