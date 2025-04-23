@@ -13,6 +13,7 @@ import Forget from "./Authentication/forget"
 import DonationHistory from "./Donation/Donardashboard/history"
 import PartnerDirectory from "./partnerDirectory/partnerdirectory"
 import AdminPanel from "./AdminPanel/admin"
+import NGODashboard from "./NgoPanel/ndopanel"
 function App() {
   return (
     <Routes>
@@ -27,6 +28,7 @@ function App() {
       <Route path="/feedback" element={<FeedbackForm/>}/>
       <Route path="/awareness" element={<AwarenessBlog/>}/>
       <Route path="/donardashboard" element={<DonorDashboard/>}/>
+      <Route path="/ngopanel" element={<NGODashboard/>}/>
       <Route path="/donateform" element={<DonationForm/>}/>
       <Route path="/donatehistory" element={<DonationHistory/>}/>
       <Route path="/partnerdirectory" element={<PartnerDirectory/>}/>
